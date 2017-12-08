@@ -1,0 +1,31 @@
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!--database connection settings-->
+        <!--<property name="connection.driver_class">com.mysql.jdbc.Driver</property>-->
+        <!--<property name="connection.url">jdbc:mysql://localhost:3306/forum</property>-->
+        <!--<property name="connection.username">root</property>-->
+        <!--<property name="connection.password">root</property>-->
+
+        <!--sql dialect-->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <!--show sql query in logs-->
+        <property name="show_sql">true</property>
+        <!--number of connections for faster work with DB-->
+        <property name="connection.pool_size">10</property>
+        <property name="hibernate.enable_lazy_load_no_trans">true</property>
+        <property name="hbm2ddl.auto">create-drop</property>
+
+        <mapping class="forum.entity.BranchEntity"/>
+        <mapping class="forum.entity.ForumEntity"/>
+        <mapping class="forum.entity.ThemeEntity"/>
+        <mapping class="forum.entity.ProfileEntity"/>
+        <mapping class="forum.entity.UserEntity"/>
+        <mapping class="forum.entity.MessageEntity"/>
+        <mapping class="forum.entity.Role"/>
+    </session-factory>
+</hibernate-configuration>
